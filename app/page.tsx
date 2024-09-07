@@ -76,18 +76,18 @@ export default function Chat() {
     });
   };
   return (
-    <main className="mx-auto w-full p-24 flex flex-col bg-gray-900 text-white min-h-screen">
-      <div className="p4 m-4">
-        <div className="flex flex-col items-center justify-center space-y-8">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold">Story Telling App</h2>
-            <p className="text-gray-300">
-              Create characters and customize the story by selecting the genre and tone.
-            </p>
-          </div>
+    <main className="mx-auto w-full p-8 flex flex-col bg-gray-900 text-white min-h-screen">
+      <div className="mb-8">
+        <h2 className="text-3xl font-bold text-center">Story Telling App</h2>
+        <p className="text-gray-300 text-center mt-2">
+          Create characters and customize the story by selecting the genre and tone.
+        </p>
+      </div>
 
-          <div className="space-y-4 bg-gray-800 rounded-lg p-4 w-full">
-            <h3 className="text-xl font-semibold">Characters</h3>
+      <div className="flex flex-wrap -mx-4">
+        <div className="w-full md:w-1/2 px-4 mb-8">
+          <div className="bg-gray-800 rounded-lg p-4">
+            <h3 className="text-xl font-semibold mb-4">Characters</h3>
             <div className="flex flex-col space-y-2">
               <input
                 type="text"
@@ -95,52 +95,50 @@ export default function Chat() {
                 value={newCharacter.name}
                 onChange={handleCharacterChange}
                 placeholder="Character Name"
-                className="p-2 text-black rounded bg-gray-200"
+                className="p-2 text-black rounded bg-gray-200 w-full md:w-2/3"
               />
-              <input
-                type="text"
+              <textarea
                 name="description"
                 value={newCharacter.description}
                 onChange={handleCharacterChange}
                 placeholder="Character Description"
-                className="p-2 text-black rounded bg-gray-200"
+                className="p-2 text-black rounded bg-gray-200 w-full md:w-2/3 h-20"
               />
-              <input
-                type="text"
+              <textarea
                 name="personality"
                 value={newCharacter.personality}
                 onChange={handleCharacterChange}
                 placeholder="Character Personality"
-                className="p-2 text-black rounded bg-gray-200"
+                className="p-2 text-black rounded bg-gray-200 w-full md:w-2/3 h-20"
               />
               <button
                 onClick={addCharacter}
-                className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full md:w-2/3"
               >
                 Add Character
               </button>
             </div>
-            <div className="mt-4">
+            <div className="mt-4 max-h-60 overflow-y-auto">
               {characters.map(char => (
                 <div key={char.id} className="mb-2 p-2 bg-gray-700 rounded">
                   <input
                     value={char.name}
                     onChange={(e) => editCharacter(char.id, 'name', e.target.value)}
-                    className="p-1 text-black rounded mb-1 bg-gray-200"
+                    className="p-1 text-black rounded mb-1 bg-gray-200 w-full"
                   />
-                  <input
+                  <textarea
                     value={char.description}
                     onChange={(e) => editCharacter(char.id, 'description', e.target.value)}
-                    className="p-1 text-black rounded mb-1 bg-gray-200"
+                    className="p-1 text-black rounded mb-1 bg-gray-200 w-full h-16"
                   />
-                  <input
+                  <textarea
                     value={char.personality}
                     onChange={(e) => editCharacter(char.id, 'personality', e.target.value)}
-                    className="p-1 text-black rounded mb-1 bg-gray-200"
+                    className="p-1 text-black rounded mb-1 bg-gray-200 w-full h-16"
                   />
                   <button
                     onClick={() => deleteCharacter(char.id)}
-                    className="bg-red-600 hover:bg-red-700 text-white font-bold py-1 px-2 rounded ml-2"
+                    className="bg-red-600 hover:bg-red-700 text-white font-bold py-1 px-2 rounded mt-1 w-full"
                   >
                     Delete
                   </button>
@@ -148,14 +146,16 @@ export default function Chat() {
               ))}
             </div>
           </div>
+        </div>
 
-          <div className="space-y-4 bg-gray-800 rounded-lg p-4">
-            <h3 className="text-xl font-semibold">Genre</h3>
-            <div className="flex flex-wrap justify-center">
+        <div className="w-full md:w-1/2 px-4">
+          <div className="bg-gray-800 rounded-lg p-4 mb-4">
+            <h3 className="text-xl font-semibold mb-4">Genre</h3>
+            <div className="grid grid-cols-2 gap-2">
               {genres.map(({ value, emoji }) => (
                 <div
                   key={value}
-                  className="p-4 m-2 bg-gray-700 rounded-lg"
+                  className="p-2 bg-gray-700 rounded-lg flex items-center"
                 >
                   <input
                     id={value}
@@ -163,8 +163,9 @@ export default function Chat() {
                     value={value}
                     name="genre"
                     onChange={handleChange}
+                    className="mr-2"
                   />
-                  <label className="ml-2" htmlFor={value}>
+                  <label htmlFor={value}>
                     {`${emoji} ${value}`}
                   </label>
                 </div>
@@ -172,13 +173,13 @@ export default function Chat() {
             </div>
           </div>
 
-          <div className="space-y-4 bg-gray-800 rounded-lg p-4">
-            <h3 className="text-xl font-semibold">Tones</h3>
-            <div className="flex flex-wrap justify-center">
+          <div className="bg-gray-800 rounded-lg p-4 mb-4">
+            <h3 className="text-xl font-semibold mb-4">Tones</h3>
+            <div className="grid grid-cols-2 gap-2">
               {tones.map(({ value, emoji }) => (
                 <div
                   key={value}
-                  className="p-4 m-2 bg-gray-700 rounded-lg"
+                  className="p-2 bg-gray-700 rounded-lg flex items-center"
                 >
                   <input
                     id={value}
@@ -186,8 +187,9 @@ export default function Chat() {
                     name="tone"
                     value={value}
                     onChange={handleChange}
+                    className="mr-2"
                   />
-                  <label className="ml-2" htmlFor={value}>
+                  <label htmlFor={value}>
                     {`${emoji} ${value}`}
                   </label>
                 </div>
@@ -196,23 +198,23 @@ export default function Chat() {
           </div>
 
           <button
-            className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded disabled:opacity-50"
+            className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded disabled:opacity-50 w-full"
             disabled={isLoading || !state.genre || !state.tone}
             onClick={generateStory}
           >
             Generate Story
           </button>
-
-          <div
-            hidden={
-              messages.length === 0 ||
-              messages[messages.length - 1]?.content.startsWith("Generate")
-            }
-            className="bg-gray-800 rounded-lg p-4 w-full"
-          >
-            {messages[messages.length - 1]?.content}
-          </div>
         </div>
+      </div>
+
+      <div
+        hidden={
+          messages.length === 0 ||
+          messages[messages.length - 1]?.content.startsWith("Generate")
+        }
+        className="bg-gray-800 rounded-lg p-4 w-full mt-8"
+      >
+        {messages[messages.length - 1]?.content}
       </div>
     </main>
   );
