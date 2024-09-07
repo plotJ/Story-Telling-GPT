@@ -1,13 +1,16 @@
 # Story Telling App
 
 ## Overview
-This Story Telling App is an interactive web application that generates custom stories based on user-defined characters, genres, and tones. It leverages AI to create unique narratives tailored to user preferences.
+This Story Telling App is an interactive web application that generates custom stories based on user-defined characters, genres, and tones. It leverages local AI models to create unique narratives tailored to user preferences.
+
+[homework1.png]
+[homework2.png]
 
 ## Features
-- Character Creation: Users can add, edit, and delete custom characters with names, descriptions, and personalities.
+- Character Creation: Add, edit, and delete custom characters with names, descriptions, and personalities.
 - Genre Selection: Choose from Fantasy, Mystery, Romance, or Sci-Fi genres.
 - Tone Selection: Set the story's tone as Happy, Sad, Sarcastic, or Funny.
-- AI-Powered Story Generation: Utilizes advanced AI to create stories incorporating user-defined elements.
+- AI-Powered Story Generation: Uses locally hosted AI models to create stories incorporating user-defined elements.
 - Dark Mode Interface: Features a sleek, eye-friendly dark mode design.
 
 ## Tech Stack
@@ -15,74 +18,100 @@ This Story Telling App is an interactive web application that generates custom s
 - React
 - TypeScript
 - Tailwind CSS
-- OpenAI API (or alternative AI service)
+- text-generation-webui (for local AI model hosting)
+
+## Prerequisites
+- [text-generation-webui](https://github.com/oobabooga/text-generation-webui) installed and set up
+- A compatible AI model loaded in text-generation-webui
 
 ## Setup and Installation
-1. Clone the repository:
+
+1. Set up text-generation-webui:
+   - Install text-generation-webui following the instructions in their GitHub repository.
+   - Enable the "API" and "OpenAI" extensions in the Session tab.
+   - Load a compatible language model.
+
+2. Clone the Story Telling App repository:
    ```
-   git clone https://github.com/your-username/story-telling-app.git
+   git clone https://github.com/plotJ/Story-Telling-GPT
    ```
-2. Navigate to the project directory:
+
+3. Navigate to the project directory:
    ```
    cd story-telling-app
    ```
-3. Install dependencies:
+
+4. Install dependencies:
    ```
    npm install
    ```
-4. Set up environment variables:
-   Create a `.env.local` file in the root directory and add your AI API key:
+
+5. Set up environment variables:
+   Create a `.env.local` file in the root directory and add:
    ```
-   OPENAI_API_KEY=your_api_key_here
+   OPENAI_API_BASE=http://127.0.0.1:5000/v1
    ```
-5. Run the development server:
+
+6. Run the development server:
    ```
    npm run dev
    ```
-6. Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
+
+7. Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
 ## Usage
-1. Add characters using the character creation form.
-2. Select a genre and tone for your story.
-3. Click "Generate Story" to create a unique narrative.
-4. Read and enjoy your custom-generated story!
+1. Ensure text-generation-webui is running with a model loaded.
+2. Add characters using the character creation form in the app.
+3. Select a genre and tone for your story.
+4. Click "Generate Story" to create a unique narrative.
+5. Read and enjoy your custom-generated story!
 
-## Homework Assignment Completion
+## AI Usage and Homework Assignment Aspects
 
-This project fulfills the requirements of the weekend homework assignment as follows:
+This project demonstrates several key aspects related to AI usage:
 
-1. GitHub Repository: Created and maintained a GitHub repository for the project.
-2. Collaborator Access: All group members were added as collaborators to the repository.
-3. README.md: This file serves as the comprehensive README for the project.
-4. Next.js Application: Developed a new application from scratch using Next.js.
-5. Character Table Implementation:
-   - Users can add, edit, and delete characters.
-   - Each character has a name, description, and personality.
-6. Custom Prompt Generation:
-   - The app generates a story using user-created characters.
-   - Genre and tone selections are incorporated into the prompt.
-7. Character Summary:
-   - The AI is instructed to provide a summary of each character's role after generating the story.
-8. Model Testing:
-   - The app is designed to work with different AI models.
-   - Model selection can be easily implemented by modifying the API call in the backend.
-9. Context Window and Model Size Experimentation:
-   - The app's structure allows for easy testing of different context window sizes and model variations.
-   - Observations on model performance can be documented separately.
+1. Local AI Model Integration:
+   - Utilizes text-generation-webui to host and run AI models locally.
+   - Demonstrates how to interface a web application with locally hosted AI models.
+
+2. Custom Prompt Engineering:
+   - Generates dynamic prompts based on user input (characters, genre, tone).
+   - Showcases how to structure prompts for creative text generation tasks.
+
+3. Character-Driven Narrative Generation:
+   - Incorporates user-created characters into the story generation process.
+   - Demonstrates complex prompt construction to guide AI in using specific elements in its output.
+
+4. Genre and Tone Control:
+   - Allows users to specify the genre and tone of the generated story.
+   - Shows how to influence AI output through high-level style instructions.
+
+5. Model Flexibility:
+   - The app's design allows for easy testing of different AI models through text-generation-webui.
+   - Enables experimentation with various model sizes and capabilities.
+
+6. API Integration:
+   - Implements API calls to the local AI service, mimicking real-world AI service integration.
+
+7. Asynchronous AI Content Generation:
+   - Handles asynchronous story generation, providing a responsive user experience.
+
+8. Context Window Utilization:
+   - The app's structure allows for testing different context window sizes by adjusting prompt length and complexity.
 
 ## Future Enhancements
-- Implement user authentication for saving and sharing stories.
-- Add more genre and tone options.
-- Incorporate visual elements or illustrations for generated stories.
-- Implement a feature to export stories in various formats (PDF, ePub, etc.).
+- Implement comparison functionality between different AI models.
+- Add options for adjusting generation parameters (temperature, top_p, etc.).
+- Incorporate a feature to fine-tune models on custom datasets.
+- Implement a system for users to rate and provide feedback on generated stories.
 
 ## Contributing
-We welcome contributions to improve the Story Telling App. Please feel free to submit issues, fork the repository and send pull requests!
+We welcome contributions to improve the Story Telling App, especially in areas of AI integration and prompt engineering. Please feel free to submit issues, fork the repository and send pull requests!
 
 ## License
 [MIT License](https://opensource.org/licenses/MIT)
 
 ## Acknowledgments
-- OpenAI for providing the AI capabilities.
-- Next.js and React communities for excellent documentation and resources.
+- The oobabooga team for creating text-generation-webui.
+- The open-source AI community for providing accessible language models.
 - All contributors and testers who helped shape this project.
