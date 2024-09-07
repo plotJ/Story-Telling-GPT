@@ -3,9 +3,6 @@
 ## Overview
 This Story Telling App is an interactive web application that generates custom stories based on user-defined characters, genres, and tones. It leverages local AI models to create unique narratives tailored to user preferences.
 
-[homework1.png]
-[homework2.png]
-
 ## Features
 - Character Creation: Add, edit, and delete custom characters with names, descriptions, and personalities.
 - Genre Selection: Choose from Fantasy, Mystery, Romance, or Sci-Fi genres.
@@ -66,38 +63,6 @@ This Story Telling App is an interactive web application that generates custom s
 4. Click "Generate Story" to create a unique narrative.
 5. Read and enjoy your custom-generated story!
 
-## AI Usage and Homework Assignment Aspects
-
-This project demonstrates several key aspects related to AI usage:
-
-1. Local AI Model Integration:
-   - Utilizes text-generation-webui to host and run AI models locally.
-   - Demonstrates how to interface a web application with locally hosted AI models.
-
-2. Custom Prompt Engineering:
-   - Generates dynamic prompts based on user input (characters, genre, tone).
-   - Showcases how to structure prompts for creative text generation tasks.
-
-3. Character-Driven Narrative Generation:
-   - Incorporates user-created characters into the story generation process.
-   - Demonstrates complex prompt construction to guide AI in using specific elements in its output.
-
-4. Genre and Tone Control:
-   - Allows users to specify the genre and tone of the generated story.
-   - Shows how to influence AI output through high-level style instructions.
-
-5. Model Flexibility:
-   - The app's design allows for easy testing of different AI models through text-generation-webui.
-   - Enables experimentation with various model sizes and capabilities.
-
-6. API Integration:
-   - Implements API calls to the local AI service, mimicking real-world AI service integration.
-
-7. Asynchronous AI Content Generation:
-   - Handles asynchronous story generation, providing a responsive user experience.
-
-8. Context Window Utilization:
-   - The app's structure allows for testing different context window sizes by adjusting prompt length and complexity.
 
 ## Future Enhancements
 - Implement comparison functionality between different AI models.
