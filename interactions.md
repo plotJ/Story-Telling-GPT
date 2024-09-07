@@ -1,5 +1,6 @@
 # AI Interactions for Story Telling App
 
+# Josh's Interaction
 ## Setup
 - Used text-generation-webui with OpenAI API enabled
 - Tested two models:
@@ -23,7 +24,15 @@
 ## Observations
 - Both models generated unique stories that fit the tone and the genre. They were completely unique and creative stories, much better than the kinds of output I've gotten with ChatGPT>
 
-## Conclusion
-- Successfully demonstrated the app's ability to work with different AI models
-- Showed how user-created characters with diverse backgrounds influence AI-generated narratives
-- Highlighted the app's capability to handle multiple characters in a single story
+## Group 2 Participants
+
+| Unique id | Discord username |
+| --------- | ---------------- |
+| 8oQt9a    | @Riddhi9570      |
+| 9uINv8    | @Mashmomello     |
+| OskkTc    | @ilam🐱          |
+| FsxR9l    | @blanketbear.🐻⛓💨 |
+| WMmGuf    | @Jason Harris    |
+| pmaHJI    | @Reed            |
+| vMu6AB    | @Lindy Han       |
+| luGrR2    | @joosh           |
