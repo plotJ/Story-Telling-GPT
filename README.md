@@ -46,7 +46,7 @@ This Story Telling App is an interactive web application that generates custom s
 5. Set up environment variables:
    Create a `.env.local` file in the root directory and add:
    ```
-   OPENAI_API_BASE=http://127.0.0.1:5000/v1
+   OPENAI_API_KEY=http://127.0.0.1:5000/v1
    ```
 
 6. Run the development server:
